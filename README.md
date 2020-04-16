@@ -16,3 +16,5 @@ composer install
 * [zedisdog/laravel-schema-extend](https://github.com/zedisdog/laravel-schema-extend)
 * [barryvdh/laravel-ide-helper](https://github.com/barryvdh/laravel-ide-helper)
 * [overtrue/laravel-query-logger](https://github.com/overtrue/laravel-query-logger)
+
+未完待续...
