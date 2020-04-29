@@ -37,10 +37,10 @@ class ExceptionReport
     /**
      * ExceptionReport constructor.
      *
-     * @param  Request  $request
-     * @param  Exception  $exception
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \Throwable  $exception
      */
-    function __construct(Request $request, Exception $exception)
+    function __construct(Request $request, \Throwable $exception)
     {
         $this->request = $request;
         $this->exception = $exception;
@@ -73,11 +73,6 @@ class ExceptionReport
      */
     public function shouldReturn()
     {
-        //只有请求包含是json或者ajax请求时才有效
-        //        if (! ($this->request->wantsJson() || $this->request->ajax())){
-        //
-        //            return false;
-        //        }
         foreach (array_keys($this->doReport) as $report) {
             if ($this->exception instanceof $report) {
                 $this->report = $report;
@@ -89,11 +84,13 @@ class ExceptionReport
     }
 
     /**
-     * @param  Exception  $e
+     * make
+     *
+     * @param  \Throwable  $e
      *
      * @return static
      */
-    public static function make(Exception $e)
+    public static function make(\Throwable $e)
     {
         return new static(\request(), $e);
     }

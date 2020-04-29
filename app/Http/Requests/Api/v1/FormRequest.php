@@ -24,7 +24,25 @@ class FormRequest extends baseFormRequest
     public function rules()
     {
         return [
-            //
+            // switch ($this->method()) {
+            //     // CREATE
+            //     case 'POST':
+            //     {
+            //         return [];
+            //     }
+            //     // UPDATE
+            //     case 'PUT':
+            //     case 'PATCH':
+            //     {
+            //         return [];
+            //     }
+            //     case 'GET':
+            //     case 'DELETE':
+            //     default:
+            //     {
+            //         return [];
+            //     }
+            // }
         ];
     }
 }
